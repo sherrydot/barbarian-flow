@@ -1,0 +1,194 @@
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  color: #e63946;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.trackers {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.rage-tracker, .hp-tracker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rage-tracker label, .hp-tracker label {
+  font-size: 1.2em;
+  color: #e63946;
+}
+
+.rage-tracker input, .hp-tracker input {
+  width: 60px;
+  padding: 5px;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: #414141;
+  color: #f0f0f0;
+  border: 2px solid #e63946;
+  border-radius: 4px;
+}
+
+.hp-tracker button {
+  padding: 5px 10px;
+  font-size: 1em;
+  background-color: #e63946;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hp-tracker button:hover {
+  background-color: #c53030;
+}
+
+.flow-chart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.chart-box {
+  background-color: #414141;
+  border: 2px solid #e63946;
+  padding: 20px;
+  margin: 10px;
+  width: 180px;
+  height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+}
+
+.chart-box h2 {
+  margin: 0;
+  font-size: 1.3em;
+  color: #e63946;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.chart-box p {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #f0f0f0;
+}
+
+.chart-box:hover {
+  background-color: #2b2b2b;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+}
+
+.chart-box:hover::after {
+  content: attr(data-description);
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #414141;
+  color: #f0f0f0;
+  padding: 10px;
+  border: 2px solid #e63946;
+  border-radius: 5px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.arrow {
+  font-size: 3em;
+  color: #e63946;
+  margin: 10px;
+}
+
+
+.character-sheet {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background: #222;
+  border-radius: 8px;
+}
+
+header, section, footer {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.stat {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.combat-info div, .skills div, .abilities div, .equipment div {
+  margin-bottom: 10px;
+}
+
+.skills {
+  background: #1a1a1a; /* Darker background for the section */
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.skills h2 {
+  font-size: 1.5em;
+  color: #e63946; /* Red color to match the theme */
+}
+
+.skills ul {
+  list-style: none; /* Removes bullet points */
+  padding: 0;
+}
+
+.skills li {
+  padding: 5px; /* Adds padding to each skill for better readability */
+  border-bottom: 1px solid #333; /* Adds a subtle separator */
+}
+
+.skills li:last-child {
+  border-bottom: none; /* Removes the border from the last item */
+}
+
+@media (max-width: 768px) {
+  .rage-tracker{
+    display:block;
+  }
+  .flow-chart {
+      flex-direction: column;
+  }
+  .arrow {
+      transform: rotate(90deg);
+  }
+  .skills {
+    display: block;
+  }
+}

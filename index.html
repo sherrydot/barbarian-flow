@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbarian Character Sheet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jersey+10&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+<body>
+    <div class="character-sheet">
+        <header>
+            <h1>Barbarian, Giant - Jotun (rev)</h1>
+            <div class="character-info">
+                <span>Player Name: Sherry</span>
+                <span>Background: Isekai</span>
+                <span>Alignment: Chaotic</span>
+                <span>Experience Points: </span>
+            </div>
+        </header>
+        <section class="main-stats">
+            <div class="stat">Strength: 24</div>
+            <div class="stat">Dexterity: 16</div>
+            <div class="stat">Constitution: 18</div>
+            <div class="stat">Intelligence: 6</div>
+            <div class="stat">Wisdom: 17</div>
+            <div class="stat">Charisma: 11</div>
+        </section>
+        <section class="combat-info">
+            <div>Armor Class: 17</div>
+            <div>Initiative: Adv+3</div>
+            <div>Speed: 30+10</div>
+        </section>
+        <div class="container">
+            <h1>Barbarian Battle Flow Chart</h1>
+            <div class="trackers">
+                <div class="rage-tracker">
+                    <label for="rage-count">Rages Left:</label>
+                    <input type="number" id="rage-count" name="rage-count" min="0" max="4" value="4">
+                </div>
+                <div class="hp-tracker">
+                    <label for="hp-count">Current HP:</label>
+                    <input type="text" id="hp-count" name="hp-count" value="80">
+                    <button id="hp-submit">Update HP</button>
+                </div>
+            </div>
+    
+            <div class="flow-chart">
+                <div class="chart-box" id="start" data-description="Consider Relentless Nature if below 50% HP">
+                    <h2>Start of Turn</h2>
+                    <p>If below 50% HP, regain 1 HP.</p>
+                </div>
+                <div class="arrow">&#8594;</div>
+    
+                <div class="chart-box" id="coldheart" data-description="If submerged in water, expend a hit die to recover HP">
+                    <h2>Coldheart</h2>
+                    <p>If submerged, heal using a hit die.</p>
+                </div>
+                <div class="arrow">&#8594;</div>
+    
+                <div class="chart-box" id="rage" data-description="Decide if you want to Rage this turn (4/4, +3)">
+                    <h2>Rage?</h2>
+                    <p>Consider Raging (+3 damage, resistances).</p>
+                </div>
+                <div class="arrow">&#8594;</div>
+    
+                <div class="chart-box" id="danger-sense" data-description="Advantage on DEX saving throws (if not blinded, deafened, or incapacitated)">
+                    <h2>Danger Sense</h2>
+                    <p>Advantage on visible DEX saves.</p>
+                </div>
+                <div class="arrow">&#8594;</div>
+    
+                <div class="chart-box" id="action" data-description="Decide on your main action: Attack, Reckless Attack, Mage Slayer, Giant's Havoc">
+                    <h2>Action</h2>
+                    <p>Choose main action (Attack, Mage Slayer...)</p>
+                </div>
+                <div class="arrow">&#8594;</div>
+    
+                <div class="chart-box" id="bonus-action" data-description="Decide if you want to: Rage, Elemental Cleaver, Mighty Impel">
+                    <h2>Bonus Action</h2>
+                    <p>Consider Rage, Elemental Cleaver, Mighty Impel.</p>
+                </div>
+                <div class="arrow">&#8594;</div>
+    
+                <div class="chart-box" id="movement" data-description="Determine how you want to move this turn">
+                    <h2>Movement</h2>
+                    <p>Plan your movement.</p>
+                </div>
+                <div class="arrow">&#8594;</div>
+    
+                <div class="chart-box" id="end" data-description="Reset Mage Slayer bonus and evaluate your position">
+                    <h2>End of Turn</h2>
+                    <p>Reset Mage Slayer, assess position.</p>
+                </div>
+            </div>
+        </div>
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Acrobatics (Dex) <span class="skill-stat">+3</span></li>
+                <li>Animal Handling (Wis) +7</li>
+                <li>Arcana (Int) -2</li>
+                <li>Athletics (Str) +11</li>
+                <li>Deception (Cha) 0</li>
+                <li>History (Int) -2</li>
+                <li>Insight (Wis) +3</li>
+                <li>Intimidation (Cha) +4</li>
+                <li>Investigation (Int) -2</li>
+                <li>Medicine (Wis) +7</li>
+                <li>Nature (Int) +2</li>
+                <li>Perception (Wis) +7</li>
+                <li>Performance (Cha) 0</li>
+                <li>Persuasion (Cha) 0</li>
+                <li>Religion (Int) -2</li>
+                <li>Sleight of Hand (Dex) +3</li>
+                <li>Stealth (Dex) +3</li>
+                <li>Survival (Wis) +7</li>
+            </ul>
+            <h2>Saving Throws</h2>
+            <ul>
+                <li>Strength +11</li>
+                <li>Dexterity +3</li>
+                <li>Constitution 8</li>
+                <li>Intelligence -2</li>
+                <li>Wisdom 7</li>
+                <li>Charisma 0</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fire Chars</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background: black;
+      }
+      #fire {
+        color: rgb(255, 255, 255);
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        position: absolute;
+        bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="element1"></div>
+    <div class="element2"></div>
+    <pre id="fire"></pre>
+    <script>
+      let width = 145;
+      let height = 28;
+
+      (fireChars = " ,;+ltgti!lI?/\\|)(1}{][rcvzjftJUOQocxfXhqwWB8&%$#@"),
+        (maxCharIndex = fireChars.length);
+
+      let firePixelsArray = [];
+
+      for (let i = 0; i < width * height + 1; i++) {
+        firePixelsArray[i] = 0;
+      }
+
+      generateFire = () => {
+        let fireString = "";
+
+        for (let i = 0; i < width; i++) {
+          let randomCol = Math.floor(Math.random() * width);
+          let index = randomCol + width * (height - 1);
+          firePixelsArray[index] = Math.floor(Math.random() * maxCharIndex);
+        }
+
+        for (let i = 0; i < width; i++) {
+          let randomCol = Math.floor(Math.random() * width);
+          let index = randomCol + width * (height - 1);
+          firePixelsArray[index] = 0;
+        }
+
+        for (let i = 0; i < width * (height - 1); i++) {
+          let averageValue =
+            (firePixelsArray[i] +
+              firePixelsArray[i + 1] +
+              firePixelsArray[i + width] +
+              firePixelsArray[i + width + 1]) /
+            4;
+
+          firePixelsArray[i] = Math.floor(averageValue);
+
+          fireString += fireChars[firePixelsArray[i]];
+          if (i % width === 0) fireString += `\n`;
+        }
+
+        document.getElementById("fire").innerText = fireString;
+        setTimeout(generateFire, 30);
+      };
+
+      generateFire();
+    </script>
+  </body>
+</html> -->
